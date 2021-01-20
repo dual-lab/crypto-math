@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"com.github/dual-lab/crypto-math/m/cmd"
+)
 
 func main() {
-	fmt.Println("Hello main go")
+	cmd.Excecute()
 }

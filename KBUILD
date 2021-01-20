@@ -12,7 +12,7 @@ install_language := golang
 mode := color_
 debug := @
 
-project_name := crypto-math-cli
+project_name := cmath
 src_root := m
 dep_root := $(empty)
 
