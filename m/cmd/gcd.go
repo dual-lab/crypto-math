@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"strconv"
 
 	"com.github/dual-lab/crypto-math/m/cmd/err"
@@ -13,11 +14,19 @@ var gcdCmd = &cobra.Command{
 	Long:  "Use the ecludian extended algorithm to calculate the gcd, u, v",
 	Args:  argsValidators,
 	RunE: func(cmd *cobra.Command, args []string) error {
+		// Retrive a and b
+		a, _ := strconv.Atoi(args[0])
+		b, _ := strconv.Atoi(args[1])
+		// Retrive extended flags
+		if extended != 0 && extended != 1 && extended != 2 {
+			return err.ErrInvalidFlagValue
+		}
+		fmt.Printf("gdm(%d, %d)\n", a, b)
 		return nil
 	},
 }
 
-var extended bool
+var extended uint8
 
 func argsValidators(command *cobra.Command, args []string) error {
 	if len(args) != 2 {
@@ -36,6 +45,6 @@ func argsValidators(command *cobra.Command, args []string) error {
 }
 
 func init() {
-	gcdCmd.Flags().BoolVarP(&extended, "extended", "e", false, "Calculate the extended Eulero algorithm coefficent")
+	gcdCmd.Flags().Uint8VarP(&extended, "extended", "e", 0, "Calculate the extended Eulero algorithm coefficents. 0(disalbed) 1(enabled) 2(u min positive solution)")
 	rootCmd.AddCommand(gcdCmd)
 }
