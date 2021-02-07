@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
+	"com.github/dual-lab/crypto-math/m/algebra"
 	"com.github/dual-lab/crypto-math/m/cmd/err"
 	"github.com/spf13/cobra"
 )
@@ -21,7 +22,18 @@ var gcdCmd = &cobra.Command{
 		if extended != 0 && extended != 1 && extended != 2 {
 			return err.ErrInvalidFlagValue
 		}
-		fmt.Printf("gdm(%d, %d)\n", a, b)
+		g, u, v := algebra.ExtEuclideanAlgo(a, b, extended == 2)
+
+		switch extended {
+		case 0:
+			fmt.Printf("%d\n", g)
+		case 1:
+			fallthrough
+		case 2:
+			fmt.Printf("u=%d\nv=%d\ng=%d\n", u, v, g)
+		default:
+			return err.ErrInvalidFlagValue
+		}
 		return nil
 	},
 }
