@@ -1,5 +1,7 @@
 package algebra
 
+import "fmt"
+
 func ExtEuclideanAlgo(a, b int, unsinged bool) (g, u, v int) {
 	if a < b {
 		a, b = b, a // switch if a < b
@@ -26,4 +28,11 @@ func ExtEuclideanAlgo(a, b int, unsinged bool) (g, u, v int) {
 
 	v = (g - a*u) / b
 	return
+}
+
+func ExampleExtEuclideanAlgo() {
+	g, _, _ := ExtEuclideanAlgo(55, 25, false)
+	fmt.Printf("gcd(55, 25)=%d", g)
+	// Output:
+	// 5
 }
