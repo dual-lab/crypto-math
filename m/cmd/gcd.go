@@ -22,6 +22,9 @@ var gcdCmd = &cobra.Command{
 		if extended != 0 && extended != 1 && extended != 2 {
 			return err.ErrInvalidFlagValue
 		}
+		if a < b {
+			a, b = b, a // switch if a < b
+		}
 		g, u, v := algebra.ExtEuclideanAlgo(a, b, extended == 2)
 
 		switch extended {
