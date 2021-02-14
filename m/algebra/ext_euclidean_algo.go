@@ -3,9 +3,6 @@ package algebra
 import "fmt"
 
 func ExtEuclideanAlgo(a, b int, unsinged bool) (g, u, v int) {
-	if a < b {
-		a, b = b, a // switch if a < b
-	}
 	u = 1
 	g = a
 	if b == 0 {
