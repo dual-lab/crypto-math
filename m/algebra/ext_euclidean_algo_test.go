@@ -7,6 +7,9 @@ import (
 	"com.github/dual-lab/crypto-math/m/algebra"
 )
 
+////////////////////////////////////////////
+// GCD test + bench
+////////////////////////////////////////////
 var tableTestGCD = [...]struct{ a, b, g, u, v int }{
 	{a: 527, b: 1258, g: 17, u: 13, v: -31},
 	{a: 228, b: 1056, g: 12, u: 8, v: -37},
@@ -64,6 +67,27 @@ func BenchmarkExtGCDUPositive(b *testing.B) {
 		b.Run(tName, func(b *testing.B) {
 			for i := 0; i < b.N; i++ {
 				algebra.ExtEuclideanAlgo(tCase.a, tCase.b, true)
+			}
+		})
+	}
+}
+
+////////////////////////////////////////////
+// Inverse mod m test + bench
+////////////////////////////////////////////
+var tableTestInvModM = [...]struct{ a, m, r int }{
+	{a: 2, m: 5, r: 3},
+	{a: 25, m: 7, r: 2},
+	{a: 3, m: 8, r: 3},
+}
+
+func TestExtInvModM(t *testing.T) {
+	for idx, tCase := range tableTestInvModM {
+		var tName = fmt.Sprintf("%d. a%d=1 mod %d", idx, tCase.a, tCase.m)
+		t.Run(tName, func(t *testing.T) {
+			inv, _ := algebra.InverModM(tCase.a, tCase.m)
+			if inv != tCase.r {
+				t.Errorf("Inverse expeced %d -- actual %d", tCase.r, inv)
 			}
 		})
 	}
