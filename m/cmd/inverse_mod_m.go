@@ -1,6 +1,13 @@
 package cmd
 
-import "github.com/spf13/cobra"
+import (
+	"fmt"
+	"strconv"
+
+	"com.github/dual-lab/crypto-math/m/algebra"
+	"com.github/dual-lab/crypto-math/m/cmd/err"
+	"github.com/spf13/cobra"
+)
 
 var inverModMCmd = &cobra.Command{
 	Use:   "invm a m",
@@ -17,6 +24,14 @@ var inverModMCmd = &cobra.Command{
 		return nil
 	},
 	RunE: func(commadn *cobra.Command, args []string) error {
+		// Retrive a and b
+		a, _ := strconv.Atoi(args[0])
+		m, _ := strconv.Atoi(args[1])
+		inv, ok := algebra.InverModM(a, m)
+		if ok == false {
+			return err.ErrInverseNotExists
+		}
+		fmt.Printf("%d\n", inv)
 		return nil
 	},
 }

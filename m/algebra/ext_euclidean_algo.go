@@ -1,6 +1,8 @@
 package algebra
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func ExtEuclideanAlgo(a, b int, unsinged bool) (g, u, v int) {
 	u = 1
@@ -32,4 +34,32 @@ func ExampleExtEuclideanAlgo() {
 	fmt.Printf("gcd(55, 25)=%d", g)
 	// Output:
 	// 5
+}
+
+func InverModM(a, m int) (int, bool) {
+	var argsSwitched bool
+	if a < m {
+		a, m = m, a
+		argsSwitched = true
+	}
+
+	g, u, v := ExtEuclideanAlgo(a, m, true)
+	// inv a mod m existis if and only if gcd(a,m) = 1
+	if g != 1 {
+		return 0, false
+	}
+	var inv int = u
+	if argsSwitched {
+		if v < 0 {
+			v = v - (v*g/a-1)*(a/g)
+		}
+		inv = v
+	}
+
+	return inv, true
+}
+
+func ExampleInverModM() {
+	inv, _ := InverModM(2, 5)
+	fmt.Printf("%d*%d=1 mod %d", 2, inv, 5)
 }
