@@ -17,3 +17,6 @@ build/
 # vendor/
 # make-build-things
 .initialize
+
+# bazel
+bazel-*

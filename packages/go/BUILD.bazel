@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix com.github/dual-lab/crypto-math
+gazelle(name = "gazelle")
+
+go_library(
+    name = "crypto-math_lib",
+    srcs = ["main.go"],
+    importpath = "com.github/dual-lab/crypto-math",
+    visibility = ["//visibility:private"],
+    deps = ["//packages/go/m/cmd"],
+)
+
+go_binary(
+    name = "climath",
+    embed = [":crypto-math_lib"],
+    visibility = ["//visibility:public"],
+)

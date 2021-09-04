@@ -1,0 +1,18 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "cmd",
+    srcs = [
+        "gcd.go",
+        "inverse_mod_m.go",
+        "root.go",
+        "validators.go",
+    ],
+    importpath = "com.github/dual-lab/crypto-math/m/cmd",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//packages/go/m/algebra",
+        "//packages/go/m/cmd/err",
+        "@com_github_spf13_cobra//:cobra",
+    ],
+)
