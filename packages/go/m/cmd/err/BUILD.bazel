@@ -1,0 +1,11 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "err",
+    srcs = [
+        "common.go",
+        "inv_mod_m.go",
+    ],
+    importpath = "com.github/dual-lab/crypto-math/m/cmd/err",
+    visibility = ["//visibility:public"],
+)

@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "algebra",
+    srcs = ["ext_euclidean_algo.go"],
+    importpath = "com.github/dual-lab/crypto-math/m/algebra",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "algebra_test",
+    srcs = ["ext_euclidean_algo_test.go"],
+    deps = [":algebra"],
+)
