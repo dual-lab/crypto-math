@@ -1,5 +1,14 @@
 load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
 
+WORKSPACE_VERSION = "0.0.1"
+
+genrule(
+    name = "generate_rust_env_file",
+    outs = ["rust_jarvis_env_file"],
+    cmd = "echo CARGO_PKG_VERSION={} > $@".format(WORKSPACE_VERSION),
+    visibility = ["//:__subpackages__"],
+)
+
 buildifier(
     name = "buildifier",
 )

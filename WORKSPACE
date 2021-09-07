@@ -49,7 +49,6 @@ load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
 
-
 ################################################################################
 # Setup rust toolchains
 ################################################################################
@@ -65,7 +64,11 @@ http_archive(
 
 load("@rules_rust//rust:repositories.bzl", "rust_repositories")
 
-rust_repositories(version = "1.54.0", edition="2018")
+rust_repositories(
+    edition = "2018",
+    version = "1.54.0",
+)
+
 ################################################################################
 ## Setup buildifier rule
 ################################################################################
