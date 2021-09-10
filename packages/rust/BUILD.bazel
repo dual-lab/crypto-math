@@ -1,0 +1,22 @@
+load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_library")
+load(":defs.bzl", "bin_deps", "lib_deps")
+
+rust_library(
+    name = "crypto_math",
+    srcs = glob(
+        include = ["src/**/*.rs"],
+        exclude = ["src/bin/*.rs"],
+    ),
+    crate_name = "crypto_math",
+    edition = "2018",
+    rustc_env_files = ["//:generate_rust_env_file"],
+    deps = lib_deps(),
+)
+
+rust_binary(
+    name = "climath",
+    srcs = ["src/main.rs"],
+    edition = "2018",
+    rustc_env_files = ["//:generate_rust_env_file"],
+    deps = bin_deps(),
+)

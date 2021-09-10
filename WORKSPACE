@@ -50,6 +50,37 @@ load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 protobuf_deps()
 
 ################################################################################
+# Setup rust toolchains
+################################################################################
+http_archive(
+    name = "rules_rust",
+    sha256 = "c10b8f75d26eeb97ddb3c6599917814bf1230089c71d2b0270d872506423eac6",
+    strip_prefix = "rules_rust-a04ff4182c4e7049a98a207a81f844fd89dbacaa",
+    urls = [
+        "https://github.com/bazelbuild/rules_rust/archive/a04ff4182c4e7049a98a207a81f844fd89dbacaa.tar.gz",
+    ],
+)
+
+load("@rules_rust//rust:repositories.bzl", "rust_repositories")
+
+rust_repositories(
+    edition = "2018",
+    version = "1.54.0",
+)
+
+load("@rules_rust//crate_universe:bootstrap.bzl", "crate_universe_bootstrap")
+
+crate_universe_bootstrap()
+
+load("//packages/rust:workspace.bzl", cli_math_deps = "deps")
+
+cli_math_deps()
+
+load("@crypto_math_deps//:defs.bzl", climath_deps_pinned_rust_install = "pinned_rust_install")
+
+climath_deps_pinned_rust_install()
+
+################################################################################
 ## Setup buildifier rule
 ################################################################################
 http_archive(

@@ -1,0 +1,8 @@
+##
+# Source before start bazel build
+#
+##
+RULES_RUST_CRATE_UNIVERSE_BOOTSTRAP=true
+RULES_RUST_REPIN=true
+
+export RULES_RUST_REPIN RULES_RUST_CRATE_UNIVERSE_BOOTSTRAP
