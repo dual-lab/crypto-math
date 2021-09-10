@@ -1,10 +1,11 @@
-load("@rules_rust//crate_universe:defs.bzl", "crate", "crate_universe")
+load("@rules_rust//crate_universe:defs.bzl", "crate_universe")
+load(":crate_universe_default.bzl", "DEFAULT_URL_TEMPLATE", "DEFAULT_SHA256_CHECKSUMS")
 
 def deps():
     crate_universe(
-        name = "crypto-math-deps",
+        name = "crypto_math_deps",
         cargo_toml_files = ["//packages/rust:Cargo.toml"],
         lockfile = "//packages/rust:bazel.lock",
-        packages = [],
-        resolver = "@rules_rust_crate_universe_bootstrap//:crate_universe_resolver",
+        resolver_download_url_template = DEFAULT_URL_TEMPLATE,
+        resolver_sha256s = DEFAULT_SHA256_CHECKSUMS,
     )
