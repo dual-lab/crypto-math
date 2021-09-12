@@ -5,7 +5,7 @@ rust_library(
     name = "crypto_math",
     srcs = glob(
         include = ["src/**/*.rs"],
-        exclude = ["src/bin/*.rs"],
+        exclude = ["src/cli/**/*.rs", "src/main.rs"],
     ),
     crate_name = "crypto_math",
     edition = "2018",
@@ -15,7 +15,7 @@ rust_library(
 
 rust_binary(
     name = "climath",
-    srcs = ["src/main.rs"],
+    srcs = glob(include = ["src/main.rs", "src/cli/**/*.rs"]),
     edition = "2018",
     rustc_env_files = ["//:generate_rust_env_file"],
     deps = bin_deps(),
