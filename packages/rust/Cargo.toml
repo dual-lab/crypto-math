@@ -3,7 +3,7 @@ name = "crypto-math"
 version = "0.1.0"
 edition = "2018"
 repository = "https://github.com/dual-lab/crypto-math"
-authors = ["dmike"]
+authors = ["dual-lab@yandex.com"]
 
 [[bin]]
 name = "climath"
@@ -17,5 +17,5 @@ path = "src/main.rs"
 structopt = "0.3.21"
 anyhow = "1.0.40"
 log = "0.4.14"
-env_logger = "0.8.3"
 exitcode = "1.1.2"
+indicatif = "0.16.2"

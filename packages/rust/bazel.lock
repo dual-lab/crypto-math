@@ -4,112 +4,8 @@
     "crate_registry_template": "https://crates.io/api/v1/crates/{crate}/{version}/download",
     "rules_rust_workspace_name": "rules_rust"
   },
-  "hash": "9fa18fa1083870770840dedf7ed63fe8752f7b8fb8dc16e97c003aca521a88d2",
+  "hash": "43cecdac8cc4947b43b3727486812e6b50fd3b97901b3eb2caa3231715c4daab",
   "transitive_renderable_packages": [
-    {
-      "crate_context": {
-        "pkg_name": "aho-corasick",
-        "pkg_version": "0.7.18",
-        "edition": "2018",
-        "raze_settings": {
-          "additional_deps": [],
-          "skipped_deps": [],
-          "extra_aliased_targets": [],
-          "additional_flags": [],
-          "additional_env": {},
-          "gen_buildrs": null,
-          "data_attr": null,
-          "data_dependencies": [],
-          "compile_data_attr": null,
-          "build_data_dependencies": [],
-          "buildrs_additional_environment_variables": {},
-          "buildrs_additional_deps": [],
-          "patch_args": [],
-          "patch_cmds": [],
-          "patch_cmds_win": [],
-          "patch_tool": null,
-          "patches": [],
-          "additional_build_file": null
-        },
-        "canonical_additional_build_file": null,
-        "default_deps": {
-          "dependencies": [
-            {
-              "buildable_target": "@crypto_math_deps__memchr__2_4_1//:memchr",
-              "name": "memchr",
-              "version": "2.4.1",
-              "is_proc_macro": false
-            }
-          ],
-          "proc_macro_dependencies": [],
-          "data_dependencies": [],
-          "build_dependencies": [],
-          "build_proc_macro_dependencies": [],
-          "build_data_dependencies": [],
-          "dev_dependencies": [],
-          "aliased_dependencies": []
-        },
-        "targeted_deps": [],
-        "license": {
-          "name": "Unlicense from expression \"Unlicense OR MIT\"",
-          "rating": "unencumbered"
-        },
-        "features": [
-          "default",
-          "std"
-        ],
-        "workspace_path_to_crate": "@crypto_math_deps__aho_corasick__0_7_18//",
-        "workspace_member_dependents": [],
-        "workspace_member_dev_dependents": [],
-        "workspace_member_build_dependents": [],
-        "is_workspace_member_dependency": false,
-        "is_binary_dependency": false,
-        "targets": [
-          {
-            "kind": "lib",
-            "name": "aho_corasick",
-            "path": "src/lib.rs",
-            "edition": "2018"
-          }
-        ],
-        "build_script_target": null,
-        "links": null,
-        "source_details": {
-          "git_data": null
-        },
-        "sha256": "1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f",
-        "registry_url": "https://crates.io/api/v1/crates/aho-corasick/0.7.18/download",
-        "expected_build_path": "remote/BUILD.aho-corasick-0.7.18.bazel",
-        "lib_target_name": "aho_corasick",
-        "is_proc_macro": false
-      },
-      "per_triple_metadata": {
-        "//conditions:default": {
-          "target": "Default",
-          "deps": {
-            "dependencies": [
-              {
-                "buildable_target": "@crypto_math_deps__memchr__2_4_1//:memchr",
-                "name": "memchr",
-                "version": "2.4.1",
-                "is_proc_macro": false
-              }
-            ],
-            "proc_macro_dependencies": [],
-            "data_dependencies": [],
-            "build_dependencies": [],
-            "build_proc_macro_dependencies": [],
-            "build_data_dependencies": [],
-            "dev_dependencies": [],
-            "aliased_dependencies": []
-          },
-          "conditions": [
-            "//conditions:default"
-          ]
-        }
-      },
-      "is_proc_macro": false
-    },
     {
       "crate_context": {
         "pkg_name": "ansi_term",
@@ -1395,8 +1291,8 @@
     },
     {
       "crate_context": {
-        "pkg_name": "env_logger",
-        "pkg_version": "0.8.4",
+        "pkg_name": "console",
+        "pkg_version": "0.14.1",
         "edition": "2018",
         "raze_settings": {
           "additional_deps": [],
@@ -1422,33 +1318,21 @@
         "default_deps": {
           "dependencies": [
             {
-              "buildable_target": "@crypto_math_deps__atty__0_2_14//:atty",
-              "name": "atty",
-              "version": "0.2.14",
+              "buildable_target": "@crypto_math_deps__lazy_static__1_4_0//:lazy_static",
+              "name": "lazy_static",
+              "version": "1.4.0",
               "is_proc_macro": false
             },
             {
-              "buildable_target": "@crypto_math_deps__humantime__2_1_0//:humantime",
-              "name": "humantime",
-              "version": "2.1.0",
+              "buildable_target": "@crypto_math_deps__libc__0_2_101//:libc",
+              "name": "libc",
+              "version": "0.2.101",
               "is_proc_macro": false
             },
             {
-              "buildable_target": "@crypto_math_deps__log__0_4_14//:log",
-              "name": "log",
-              "version": "0.4.14",
-              "is_proc_macro": false
-            },
-            {
-              "buildable_target": "@crypto_math_deps__regex__1_5_4//:regex",
-              "name": "regex",
-              "version": "1.5.4",
-              "is_proc_macro": false
-            },
-            {
-              "buildable_target": "@crypto_math_deps__termcolor__1_1_2//:termcolor",
-              "name": "termcolor",
-              "version": "1.1.2",
+              "buildable_target": "@crypto_math_deps__terminal_size__0_1_17//:terminal_size",
+              "name": "terminal_size",
+              "version": "0.1.17",
               "is_proc_macro": false
             }
           ],
@@ -1460,55 +1344,77 @@
           "dev_dependencies": [],
           "aliased_dependencies": []
         },
-        "targeted_deps": [],
+        "targeted_deps": [
+          {
+            "target": "cfg(windows)",
+            "deps": {
+              "dependencies": [
+                {
+                  "buildable_target": "@crypto_math_deps__encode_unicode__0_3_6//:encode_unicode",
+                  "name": "encode_unicode",
+                  "version": "0.3.6",
+                  "is_proc_macro": false
+                },
+                {
+                  "buildable_target": "@crypto_math_deps__winapi__0_3_9//:winapi",
+                  "name": "winapi",
+                  "version": "0.3.9",
+                  "is_proc_macro": false
+                }
+              ],
+              "proc_macro_dependencies": [],
+              "data_dependencies": [],
+              "build_dependencies": [],
+              "build_proc_macro_dependencies": [],
+              "build_data_dependencies": [],
+              "dev_dependencies": [],
+              "aliased_dependencies": []
+            },
+            "conditions": [
+              "@rules_rust//rust/platform:x86_64-pc-windows-msvc"
+            ]
+          }
+        ],
         "license": {
-          "name": "MIT from expression \"MIT OR Apache-2.0\"",
+          "name": "MIT from expression \"MIT\"",
           "rating": "notice"
         },
-        "features": [
-          "atty",
-          "default",
-          "humantime",
-          "regex",
-          "termcolor"
-        ],
-        "workspace_path_to_crate": "@crypto_math_deps__env_logger__0_8_4//",
-        "workspace_member_dependents": [
-          ""
-        ],
+        "features": [],
+        "workspace_path_to_crate": "@crypto_math_deps__console__0_14_1//",
+        "workspace_member_dependents": [],
         "workspace_member_dev_dependents": [],
         "workspace_member_build_dependents": [],
-        "is_workspace_member_dependency": true,
+        "is_workspace_member_dependency": false,
         "is_binary_dependency": false,
         "targets": [
           {
+            "kind": "example",
+            "name": "colors",
+            "path": "examples/colors.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "colors256",
+            "path": "examples/colors256.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "cursor_at",
+            "path": "examples/cursor_at.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "term",
+            "path": "examples/term.rs",
+            "edition": "2018"
+          },
+          {
             "kind": "lib",
-            "name": "env_logger",
+            "name": "console",
             "path": "src/lib.rs",
-            "edition": "2018"
-          },
-          {
-            "kind": "test",
-            "name": "init-twice-retains-filter",
-            "path": "tests/init-twice-retains-filter.rs",
-            "edition": "2018"
-          },
-          {
-            "kind": "test",
-            "name": "log-in-log",
-            "path": "tests/log-in-log.rs",
-            "edition": "2018"
-          },
-          {
-            "kind": "test",
-            "name": "log_tls_dtors",
-            "path": "tests/log_tls_dtors.rs",
-            "edition": "2018"
-          },
-          {
-            "kind": "test",
-            "name": "regexp_filter",
-            "path": "tests/regexp_filter.rs",
             "edition": "2018"
           }
         ],
@@ -1517,10 +1423,10 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "a19187fea3ac7e84da7dacf48de0c45d63c6a76f9490dae389aead16c243fce3",
-        "registry_url": "https://crates.io/api/v1/crates/env_logger/0.8.4/download",
-        "expected_build_path": "remote/BUILD.env_logger-0.8.4.bazel",
-        "lib_target_name": "env_logger",
+        "sha256": "3993e6445baa160675931ec041a5e03ca84b9c6e32a056150d3aa2bdda0a1f45",
+        "registry_url": "https://crates.io/api/v1/crates/console/0.14.1/download",
+        "expected_build_path": "remote/BUILD.console-0.14.1.bazel",
+        "lib_target_name": "console",
         "is_proc_macro": false
       },
       "per_triple_metadata": {
@@ -1529,33 +1435,21 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@crypto_math_deps__atty__0_2_14//:atty",
-                "name": "atty",
-                "version": "0.2.14",
+                "buildable_target": "@crypto_math_deps__lazy_static__1_4_0//:lazy_static",
+                "name": "lazy_static",
+                "version": "1.4.0",
                 "is_proc_macro": false
               },
               {
-                "buildable_target": "@crypto_math_deps__humantime__2_1_0//:humantime",
-                "name": "humantime",
-                "version": "2.1.0",
+                "buildable_target": "@crypto_math_deps__libc__0_2_101//:libc",
+                "name": "libc",
+                "version": "0.2.101",
                 "is_proc_macro": false
               },
               {
-                "buildable_target": "@crypto_math_deps__log__0_4_14//:log",
-                "name": "log",
-                "version": "0.4.14",
-                "is_proc_macro": false
-              },
-              {
-                "buildable_target": "@crypto_math_deps__regex__1_5_4//:regex",
-                "name": "regex",
-                "version": "1.5.4",
-                "is_proc_macro": false
-              },
-              {
-                "buildable_target": "@crypto_math_deps__termcolor__1_1_2//:termcolor",
-                "name": "termcolor",
-                "version": "1.1.2",
+                "buildable_target": "@crypto_math_deps__terminal_size__0_1_17//:terminal_size",
+                "name": "terminal_size",
+                "version": "0.1.17",
                 "is_proc_macro": false
               }
             ],
@@ -1569,6 +1463,274 @@
           },
           "conditions": [
             "//conditions:default"
+          ]
+        },
+        "@rules_rust//rust/platform:x86_64-pc-windows-msvc": {
+          "target": " cfg(windows)",
+          "deps": {
+            "dependencies": [
+              {
+                "buildable_target": "@crypto_math_deps__encode_unicode__0_3_6//:encode_unicode",
+                "name": "encode_unicode",
+                "version": "0.3.6",
+                "is_proc_macro": false
+              },
+              {
+                "buildable_target": "@crypto_math_deps__winapi__0_3_9//:winapi",
+                "name": "winapi",
+                "version": "0.3.9",
+                "is_proc_macro": false
+              },
+              {
+                "buildable_target": "@crypto_math_deps__lazy_static__1_4_0//:lazy_static",
+                "name": "lazy_static",
+                "version": "1.4.0",
+                "is_proc_macro": false
+              },
+              {
+                "buildable_target": "@crypto_math_deps__libc__0_2_101//:libc",
+                "name": "libc",
+                "version": "0.2.101",
+                "is_proc_macro": false
+              },
+              {
+                "buildable_target": "@crypto_math_deps__terminal_size__0_1_17//:terminal_size",
+                "name": "terminal_size",
+                "version": "0.1.17",
+                "is_proc_macro": false
+              }
+            ],
+            "proc_macro_dependencies": [],
+            "data_dependencies": [],
+            "build_dependencies": [],
+            "build_proc_macro_dependencies": [],
+            "build_data_dependencies": [],
+            "dev_dependencies": [],
+            "aliased_dependencies": []
+          },
+          "conditions": [
+            "@rules_rust//rust/platform:x86_64-pc-windows-msvc"
+          ]
+        }
+      },
+      "is_proc_macro": false
+    },
+    {
+      "crate_context": {
+        "pkg_name": "encode_unicode",
+        "pkg_version": "0.3.6",
+        "edition": "2015",
+        "raze_settings": {
+          "additional_deps": [],
+          "skipped_deps": [],
+          "extra_aliased_targets": [],
+          "additional_flags": [],
+          "additional_env": {},
+          "gen_buildrs": null,
+          "data_attr": null,
+          "data_dependencies": [],
+          "compile_data_attr": null,
+          "build_data_dependencies": [],
+          "buildrs_additional_environment_variables": {},
+          "buildrs_additional_deps": [],
+          "patch_args": [],
+          "patch_cmds": [],
+          "patch_cmds_win": [],
+          "patch_tool": null,
+          "patches": [],
+          "additional_build_file": null
+        },
+        "canonical_additional_build_file": null,
+        "default_deps": {
+          "dependencies": [],
+          "proc_macro_dependencies": [],
+          "data_dependencies": [],
+          "build_dependencies": [],
+          "build_proc_macro_dependencies": [],
+          "build_data_dependencies": [],
+          "dev_dependencies": [],
+          "aliased_dependencies": []
+        },
+        "targeted_deps": [
+          {
+            "target": "cfg(unix)",
+            "deps": {
+              "dependencies": [],
+              "proc_macro_dependencies": [],
+              "data_dependencies": [],
+              "build_dependencies": [],
+              "build_proc_macro_dependencies": [],
+              "build_data_dependencies": [],
+              "dev_dependencies": [],
+              "aliased_dependencies": []
+            },
+            "conditions": [
+              "@rules_rust//rust/platform:aarch64-apple-darwin",
+              "@rules_rust//rust/platform:aarch64-unknown-linux-gnu",
+              "@rules_rust//rust/platform:x86_64-apple-darwin",
+              "@rules_rust//rust/platform:x86_64-unknown-freebsd",
+              "@rules_rust//rust/platform:x86_64-unknown-linux-gnu"
+            ]
+          }
+        ],
+        "license": {
+          "name": "MIT from expression \"MIT OR Apache-2.0\"",
+          "rating": "notice"
+        },
+        "features": [
+          "default",
+          "std"
+        ],
+        "workspace_path_to_crate": "@crypto_math_deps__encode_unicode__0_3_6//",
+        "workspace_member_dependents": [],
+        "workspace_member_dev_dependents": [],
+        "workspace_member_build_dependents": [],
+        "is_workspace_member_dependency": false,
+        "is_binary_dependency": false,
+        "targets": [
+          {
+            "kind": "bench",
+            "name": "multiiterators",
+            "path": "benches/multiiterators.rs",
+            "edition": "2015"
+          },
+          {
+            "kind": "lib",
+            "name": "encode_unicode",
+            "path": "src/lib.rs",
+            "edition": "2015"
+          },
+          {
+            "kind": "test",
+            "name": "errs",
+            "path": "tests/errs.rs",
+            "edition": "2015"
+          },
+          {
+            "kind": "test",
+            "name": "exhaustive",
+            "path": "tests/exhaustive.rs",
+            "edition": "2015"
+          },
+          {
+            "kind": "test",
+            "name": "iterators",
+            "path": "tests/iterators.rs",
+            "edition": "2015"
+          },
+          {
+            "kind": "test",
+            "name": "oks",
+            "path": "tests/oks.rs",
+            "edition": "2015"
+          }
+        ],
+        "build_script_target": null,
+        "links": null,
+        "source_details": {
+          "git_data": null
+        },
+        "sha256": "a357d28ed41a50f9c765dbfe56cbc04a64e53e5fc58ba79fbc34c10ef3df831f",
+        "registry_url": "https://crates.io/api/v1/crates/encode_unicode/0.3.6/download",
+        "expected_build_path": "remote/BUILD.encode_unicode-0.3.6.bazel",
+        "lib_target_name": "encode_unicode",
+        "is_proc_macro": false
+      },
+      "per_triple_metadata": {
+        "//conditions:default": {
+          "target": "Default",
+          "deps": {
+            "dependencies": [],
+            "proc_macro_dependencies": [],
+            "data_dependencies": [],
+            "build_dependencies": [],
+            "build_proc_macro_dependencies": [],
+            "build_data_dependencies": [],
+            "dev_dependencies": [],
+            "aliased_dependencies": []
+          },
+          "conditions": [
+            "//conditions:default"
+          ]
+        },
+        "@rules_rust//rust/platform:aarch64-apple-darwin": {
+          "target": " cfg(unix)",
+          "deps": {
+            "dependencies": [],
+            "proc_macro_dependencies": [],
+            "data_dependencies": [],
+            "build_dependencies": [],
+            "build_proc_macro_dependencies": [],
+            "build_data_dependencies": [],
+            "dev_dependencies": [],
+            "aliased_dependencies": []
+          },
+          "conditions": [
+            "@rules_rust//rust/platform:aarch64-apple-darwin"
+          ]
+        },
+        "@rules_rust//rust/platform:aarch64-unknown-linux-gnu": {
+          "target": " cfg(unix)",
+          "deps": {
+            "dependencies": [],
+            "proc_macro_dependencies": [],
+            "data_dependencies": [],
+            "build_dependencies": [],
+            "build_proc_macro_dependencies": [],
+            "build_data_dependencies": [],
+            "dev_dependencies": [],
+            "aliased_dependencies": []
+          },
+          "conditions": [
+            "@rules_rust//rust/platform:aarch64-unknown-linux-gnu"
+          ]
+        },
+        "@rules_rust//rust/platform:x86_64-apple-darwin": {
+          "target": " cfg(unix)",
+          "deps": {
+            "dependencies": [],
+            "proc_macro_dependencies": [],
+            "data_dependencies": [],
+            "build_dependencies": [],
+            "build_proc_macro_dependencies": [],
+            "build_data_dependencies": [],
+            "dev_dependencies": [],
+            "aliased_dependencies": []
+          },
+          "conditions": [
+            "@rules_rust//rust/platform:x86_64-apple-darwin"
+          ]
+        },
+        "@rules_rust//rust/platform:x86_64-unknown-freebsd": {
+          "target": " cfg(unix)",
+          "deps": {
+            "dependencies": [],
+            "proc_macro_dependencies": [],
+            "data_dependencies": [],
+            "build_dependencies": [],
+            "build_proc_macro_dependencies": [],
+            "build_data_dependencies": [],
+            "dev_dependencies": [],
+            "aliased_dependencies": []
+          },
+          "conditions": [
+            "@rules_rust//rust/platform:x86_64-unknown-freebsd"
+          ]
+        },
+        "@rules_rust//rust/platform:x86_64-unknown-linux-gnu": {
+          "target": " cfg(unix)",
+          "deps": {
+            "dependencies": [],
+            "proc_macro_dependencies": [],
+            "data_dependencies": [],
+            "build_dependencies": [],
+            "build_proc_macro_dependencies": [],
+            "build_data_dependencies": [],
+            "dev_dependencies": [],
+            "aliased_dependencies": []
+          },
+          "conditions": [
+            "@rules_rust//rust/platform:x86_64-unknown-linux-gnu"
           ]
         }
       },
@@ -1875,8 +2037,8 @@
     },
     {
       "crate_context": {
-        "pkg_name": "humantime",
-        "pkg_version": "2.1.0",
+        "pkg_name": "indicatif",
+        "pkg_version": "0.16.2",
         "edition": "2018",
         "raze_settings": {
           "additional_deps": [],
@@ -1900,7 +2062,32 @@
         },
         "canonical_additional_build_file": null,
         "default_deps": {
-          "dependencies": [],
+          "dependencies": [
+            {
+              "buildable_target": "@crypto_math_deps__console__0_14_1//:console",
+              "name": "console",
+              "version": "0.14.1",
+              "is_proc_macro": false
+            },
+            {
+              "buildable_target": "@crypto_math_deps__lazy_static__1_4_0//:lazy_static",
+              "name": "lazy_static",
+              "version": "1.4.0",
+              "is_proc_macro": false
+            },
+            {
+              "buildable_target": "@crypto_math_deps__number_prefix__0_4_0//:number_prefix",
+              "name": "number_prefix",
+              "version": "0.4.0",
+              "is_proc_macro": false
+            },
+            {
+              "buildable_target": "@crypto_math_deps__regex__1_5_4//:regex",
+              "name": "regex",
+              "version": "1.5.4",
+              "is_proc_macro": false
+            }
+          ],
           "proc_macro_dependencies": [],
           "data_dependencies": [],
           "build_dependencies": [],
@@ -1911,33 +2098,133 @@
         },
         "targeted_deps": [],
         "license": {
-          "name": "MIT from expression \"MIT OR Apache-2.0\"",
+          "name": "MIT from expression \"MIT\"",
           "rating": "notice"
         },
-        "features": [],
-        "workspace_path_to_crate": "@crypto_math_deps__humantime__2_1_0//",
-        "workspace_member_dependents": [],
+        "features": [
+          "default"
+        ],
+        "workspace_path_to_crate": "@crypto_math_deps__indicatif__0_16_2//",
+        "workspace_member_dependents": [
+          ""
+        ],
         "workspace_member_dev_dependents": [],
         "workspace_member_build_dependents": [],
-        "is_workspace_member_dependency": false,
+        "is_workspace_member_dependency": true,
         "is_binary_dependency": false,
         "targets": [
           {
-            "kind": "bench",
-            "name": "datetime_format",
-            "path": "benches/datetime_format.rs",
+            "kind": "example",
+            "name": "cargo",
+            "path": "examples/cargo.rs",
             "edition": "2018"
           },
           {
-            "kind": "bench",
-            "name": "datetime_parse",
-            "path": "benches/datetime_parse.rs",
+            "kind": "example",
+            "name": "cargowrap",
+            "path": "examples/cargowrap.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "download",
+            "path": "examples/download.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "download-continued",
+            "path": "examples/download-continued.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "download-speed",
+            "path": "examples/download-speed.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "fastbar",
+            "path": "examples/fastbar.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "finebars",
+            "path": "examples/finebars.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "iterator",
+            "path": "examples/iterator.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "log",
+            "path": "examples/log.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "long-spinner",
+            "path": "examples/long-spinner.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "morebars",
+            "path": "examples/morebars.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "multi",
+            "path": "examples/multi.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "multi-tree",
+            "path": "examples/multi-tree.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "multi-tree-ext",
+            "path": "examples/multi-tree-ext.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "single",
+            "path": "examples/single.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "tokio",
+            "path": "examples/tokio.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "yarnish",
+            "path": "examples/yarnish.rs",
             "edition": "2018"
           },
           {
             "kind": "lib",
-            "name": "humantime",
+            "name": "indicatif",
             "path": "src/lib.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "test",
+            "name": "multi-autodrop",
+            "path": "tests/multi-autodrop.rs",
             "edition": "2018"
           }
         ],
@@ -1946,17 +2233,42 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "9a3a5bfb195931eeb336b2a7b4d761daec841b97f947d34394601737a7bba5e4",
-        "registry_url": "https://crates.io/api/v1/crates/humantime/2.1.0/download",
-        "expected_build_path": "remote/BUILD.humantime-2.1.0.bazel",
-        "lib_target_name": "humantime",
+        "sha256": "2d207dc617c7a380ab07ff572a6e52fa202a2a8f355860ac9c38e23f8196be1b",
+        "registry_url": "https://crates.io/api/v1/crates/indicatif/0.16.2/download",
+        "expected_build_path": "remote/BUILD.indicatif-0.16.2.bazel",
+        "lib_target_name": "indicatif",
         "is_proc_macro": false
       },
       "per_triple_metadata": {
         "//conditions:default": {
           "target": "Default",
           "deps": {
-            "dependencies": [],
+            "dependencies": [
+              {
+                "buildable_target": "@crypto_math_deps__console__0_14_1//:console",
+                "name": "console",
+                "version": "0.14.1",
+                "is_proc_macro": false
+              },
+              {
+                "buildable_target": "@crypto_math_deps__lazy_static__1_4_0//:lazy_static",
+                "name": "lazy_static",
+                "version": "1.4.0",
+                "is_proc_macro": false
+              },
+              {
+                "buildable_target": "@crypto_math_deps__number_prefix__0_4_0//:number_prefix",
+                "name": "number_prefix",
+                "version": "0.4.0",
+                "is_proc_macro": false
+              },
+              {
+                "buildable_target": "@crypto_math_deps__regex__1_5_4//:regex",
+                "name": "regex",
+                "version": "1.5.4",
+                "is_proc_macro": false
+              }
+            ],
             "proc_macro_dependencies": [],
             "data_dependencies": [],
             "build_dependencies": [],
@@ -2112,7 +2424,10 @@
           "name": "MIT from expression \"MIT OR Apache-2.0\"",
           "rating": "notice"
         },
-        "features": [],
+        "features": [
+          "default",
+          "std"
+        ],
         "workspace_path_to_crate": "@crypto_math_deps__libc__0_2_101//",
         "workspace_member_dependents": [],
         "workspace_member_dev_dependents": [],
@@ -2217,9 +2532,7 @@
           "name": "MIT from expression \"MIT OR Apache-2.0\"",
           "rating": "notice"
         },
-        "features": [
-          "std"
-        ],
+        "features": [],
         "workspace_path_to_crate": "@crypto_math_deps__log__0_4_14//",
         "workspace_member_dependents": [
           ""
@@ -2299,9 +2612,9 @@
     },
     {
       "crate_context": {
-        "pkg_name": "memchr",
-        "pkg_version": "2.4.1",
-        "edition": "2018",
+        "pkg_name": "number_prefix",
+        "pkg_version": "0.4.0",
+        "edition": "2015",
         "raze_settings": {
           "additional_deps": [],
           "skipped_deps": [],
@@ -2335,14 +2648,14 @@
         },
         "targeted_deps": [],
         "license": {
-          "name": "Unlicense from expression \"Unlicense OR MIT\"",
-          "rating": "unencumbered"
+          "name": "MIT from expression \"MIT\"",
+          "rating": "notice"
         },
         "features": [
           "default",
           "std"
         ],
-        "workspace_path_to_crate": "@crypto_math_deps__memchr__2_4_1//",
+        "workspace_path_to_crate": "@crypto_math_deps__number_prefix__0_4_0//",
         "workspace_member_dependents": [],
         "workspace_member_dev_dependents": [],
         "workspace_member_build_dependents": [],
@@ -2350,26 +2663,27 @@
         "is_binary_dependency": false,
         "targets": [
           {
+            "kind": "example",
+            "name": "conversions",
+            "path": "examples/conversions.rs",
+            "edition": "2015"
+          },
+          {
             "kind": "lib",
-            "name": "memchr",
+            "name": "number_prefix",
             "path": "src/lib.rs",
-            "edition": "2018"
+            "edition": "2015"
           }
         ],
-        "build_script_target": {
-          "kind": "custom-build",
-          "name": "build-script-build",
-          "path": "build.rs",
-          "edition": "2018"
-        },
+        "build_script_target": null,
         "links": null,
         "source_details": {
           "git_data": null
         },
-        "sha256": "308cc39be01b73d0d18f82a0e7b2a3df85245f84af96fdddc5d202d27e47b86a",
-        "registry_url": "https://crates.io/api/v1/crates/memchr/2.4.1/download",
-        "expected_build_path": "remote/BUILD.memchr-2.4.1.bazel",
-        "lib_target_name": "memchr",
+        "sha256": "830b246a0e5f20af87141b25c173cd1b609bd7779a4617d6ec582abaf90870f3",
+        "registry_url": "https://crates.io/api/v1/crates/number_prefix/0.4.0/download",
+        "expected_build_path": "remote/BUILD.number_prefix-0.4.0.bazel",
+        "lib_target_name": "number_prefix",
         "is_proc_macro": false
       },
       "per_triple_metadata": {
@@ -2988,18 +3302,6 @@
         "default_deps": {
           "dependencies": [
             {
-              "buildable_target": "@crypto_math_deps__aho_corasick__0_7_18//:aho_corasick",
-              "name": "aho-corasick",
-              "version": "0.7.18",
-              "is_proc_macro": false
-            },
-            {
-              "buildable_target": "@crypto_math_deps__memchr__2_4_1//:memchr",
-              "name": "memchr",
-              "version": "2.4.1",
-              "is_proc_macro": false
-            },
-            {
               "buildable_target": "@crypto_math_deps__regex_syntax__0_6_25//:regex_syntax",
               "name": "regex-syntax",
               "version": "0.6.25",
@@ -3020,13 +3322,6 @@
           "rating": "notice"
         },
         "features": [
-          "aho-corasick",
-          "memchr",
-          "perf",
-          "perf-cache",
-          "perf-dfa",
-          "perf-inline",
-          "perf-literal",
           "std"
         ],
         "workspace_path_to_crate": "@crypto_math_deps__regex__1_5_4//",
@@ -3149,18 +3444,6 @@
           "target": "Default",
           "deps": {
             "dependencies": [
-              {
-                "buildable_target": "@crypto_math_deps__aho_corasick__0_7_18//:aho_corasick",
-                "name": "aho-corasick",
-                "version": "0.7.18",
-                "is_proc_macro": false
-              },
-              {
-                "buildable_target": "@crypto_math_deps__memchr__2_4_1//:memchr",
-                "name": "memchr",
-                "version": "2.4.1",
-                "is_proc_macro": false
-              },
               {
                 "buildable_target": "@crypto_math_deps__regex_syntax__0_6_25//:regex_syntax",
                 "name": "regex-syntax",
@@ -4252,8 +4535,8 @@
     },
     {
       "crate_context": {
-        "pkg_name": "termcolor",
-        "pkg_version": "1.1.2",
+        "pkg_name": "terminal_size",
+        "pkg_version": "0.1.17",
         "edition": "2018",
         "raze_settings": {
           "additional_deps": [],
@@ -4288,13 +4571,40 @@
         },
         "targeted_deps": [
           {
+            "target": "cfg(not(windows))",
+            "deps": {
+              "dependencies": [
+                {
+                  "buildable_target": "@crypto_math_deps__libc__0_2_101//:libc",
+                  "name": "libc",
+                  "version": "0.2.101",
+                  "is_proc_macro": false
+                }
+              ],
+              "proc_macro_dependencies": [],
+              "data_dependencies": [],
+              "build_dependencies": [],
+              "build_proc_macro_dependencies": [],
+              "build_data_dependencies": [],
+              "dev_dependencies": [],
+              "aliased_dependencies": []
+            },
+            "conditions": [
+              "@rules_rust//rust/platform:aarch64-apple-darwin",
+              "@rules_rust//rust/platform:aarch64-unknown-linux-gnu",
+              "@rules_rust//rust/platform:x86_64-apple-darwin",
+              "@rules_rust//rust/platform:x86_64-unknown-freebsd",
+              "@rules_rust//rust/platform:x86_64-unknown-linux-gnu"
+            ]
+          },
+          {
             "target": "cfg(windows)",
             "deps": {
               "dependencies": [
                 {
-                  "buildable_target": "@crypto_math_deps__winapi_util__0_1_5//:winapi_util",
-                  "name": "winapi-util",
-                  "version": "0.1.5",
+                  "buildable_target": "@crypto_math_deps__winapi__0_3_9//:winapi",
+                  "name": "winapi",
+                  "version": "0.3.9",
                   "is_proc_macro": false
                 }
               ],
@@ -4312,11 +4622,11 @@
           }
         ],
         "license": {
-          "name": "Unlicense from expression \"Unlicense OR MIT\"",
-          "rating": "unencumbered"
+          "name": "MIT from expression \"MIT OR Apache-2.0\"",
+          "rating": "notice"
         },
         "features": [],
-        "workspace_path_to_crate": "@crypto_math_deps__termcolor__1_1_2//",
+        "workspace_path_to_crate": "@crypto_math_deps__terminal_size__0_1_17//",
         "workspace_member_dependents": [],
         "workspace_member_dev_dependents": [],
         "workspace_member_build_dependents": [],
@@ -4324,8 +4634,14 @@
         "is_binary_dependency": false,
         "targets": [
           {
+            "kind": "example",
+            "name": "get_size",
+            "path": "examples/get_size.rs",
+            "edition": "2018"
+          },
+          {
             "kind": "lib",
-            "name": "termcolor",
+            "name": "terminal_size",
             "path": "src/lib.rs",
             "edition": "2018"
           }
@@ -4335,10 +4651,10 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "2dfed899f0eb03f32ee8c6a0aabdb8a7949659e3466561fc0adf54e26d88c5f4",
-        "registry_url": "https://crates.io/api/v1/crates/termcolor/1.1.2/download",
-        "expected_build_path": "remote/BUILD.termcolor-1.1.2.bazel",
-        "lib_target_name": "termcolor",
+        "sha256": "633c1a546cee861a1a6d0dc69ebeca693bf4296661ba7852b9d21d159e0506df",
+        "registry_url": "https://crates.io/api/v1/crates/terminal_size/0.1.17/download",
+        "expected_build_path": "remote/BUILD.terminal_size-0.1.17.bazel",
+        "lib_target_name": "terminal_size",
         "is_proc_macro": false
       },
       "per_triple_metadata": {
@@ -4358,14 +4674,83 @@
             "//conditions:default"
           ]
         },
+        "@rules_rust//rust/platform:aarch64-apple-darwin": {
+          "target": " cfg(not(windows))",
+          "deps": {
+            "dependencies": [
+              {
+                "buildable_target": "@crypto_math_deps__libc__0_2_101//:libc",
+                "name": "libc",
+                "version": "0.2.101",
+                "is_proc_macro": false
+              }
+            ],
+            "proc_macro_dependencies": [],
+            "data_dependencies": [],
+            "build_dependencies": [],
+            "build_proc_macro_dependencies": [],
+            "build_data_dependencies": [],
+            "dev_dependencies": [],
+            "aliased_dependencies": []
+          },
+          "conditions": [
+            "@rules_rust//rust/platform:aarch64-apple-darwin"
+          ]
+        },
+        "@rules_rust//rust/platform:aarch64-unknown-linux-gnu": {
+          "target": " cfg(not(windows))",
+          "deps": {
+            "dependencies": [
+              {
+                "buildable_target": "@crypto_math_deps__libc__0_2_101//:libc",
+                "name": "libc",
+                "version": "0.2.101",
+                "is_proc_macro": false
+              }
+            ],
+            "proc_macro_dependencies": [],
+            "data_dependencies": [],
+            "build_dependencies": [],
+            "build_proc_macro_dependencies": [],
+            "build_data_dependencies": [],
+            "dev_dependencies": [],
+            "aliased_dependencies": []
+          },
+          "conditions": [
+            "@rules_rust//rust/platform:aarch64-unknown-linux-gnu"
+          ]
+        },
+        "@rules_rust//rust/platform:x86_64-apple-darwin": {
+          "target": " cfg(not(windows))",
+          "deps": {
+            "dependencies": [
+              {
+                "buildable_target": "@crypto_math_deps__libc__0_2_101//:libc",
+                "name": "libc",
+                "version": "0.2.101",
+                "is_proc_macro": false
+              }
+            ],
+            "proc_macro_dependencies": [],
+            "data_dependencies": [],
+            "build_dependencies": [],
+            "build_proc_macro_dependencies": [],
+            "build_data_dependencies": [],
+            "dev_dependencies": [],
+            "aliased_dependencies": []
+          },
+          "conditions": [
+            "@rules_rust//rust/platform:x86_64-apple-darwin"
+          ]
+        },
         "@rules_rust//rust/platform:x86_64-pc-windows-msvc": {
           "target": " cfg(windows)",
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@crypto_math_deps__winapi_util__0_1_5//:winapi_util",
-                "name": "winapi-util",
-                "version": "0.1.5",
+                "buildable_target": "@crypto_math_deps__winapi__0_3_9//:winapi",
+                "name": "winapi",
+                "version": "0.3.9",
                 "is_proc_macro": false
               }
             ],
@@ -4379,6 +4764,52 @@
           },
           "conditions": [
             "@rules_rust//rust/platform:x86_64-pc-windows-msvc"
+          ]
+        },
+        "@rules_rust//rust/platform:x86_64-unknown-freebsd": {
+          "target": " cfg(not(windows))",
+          "deps": {
+            "dependencies": [
+              {
+                "buildable_target": "@crypto_math_deps__libc__0_2_101//:libc",
+                "name": "libc",
+                "version": "0.2.101",
+                "is_proc_macro": false
+              }
+            ],
+            "proc_macro_dependencies": [],
+            "data_dependencies": [],
+            "build_dependencies": [],
+            "build_proc_macro_dependencies": [],
+            "build_data_dependencies": [],
+            "dev_dependencies": [],
+            "aliased_dependencies": []
+          },
+          "conditions": [
+            "@rules_rust//rust/platform:x86_64-unknown-freebsd"
+          ]
+        },
+        "@rules_rust//rust/platform:x86_64-unknown-linux-gnu": {
+          "target": " cfg(not(windows))",
+          "deps": {
+            "dependencies": [
+              {
+                "buildable_target": "@crypto_math_deps__libc__0_2_101//:libc",
+                "name": "libc",
+                "version": "0.2.101",
+                "is_proc_macro": false
+              }
+            ],
+            "proc_macro_dependencies": [],
+            "data_dependencies": [],
+            "build_dependencies": [],
+            "build_proc_macro_dependencies": [],
+            "build_data_dependencies": [],
+            "dev_dependencies": [],
+            "aliased_dependencies": []
+          },
+          "conditions": [
+            "@rules_rust//rust/platform:x86_64-unknown-linux-gnu"
           ]
         }
       },
@@ -5022,15 +5453,14 @@
         "features": [
           "consoleapi",
           "errhandlingapi",
-          "fileapi",
+          "handleapi",
           "minwinbase",
           "minwindef",
           "processenv",
-          "std",
           "winbase",
           "wincon",
-          "winerror",
-          "winnt"
+          "winnt",
+          "winuser"
         ],
         "workspace_path_to_crate": "@crypto_math_deps__winapi__0_3_9//",
         "workspace_member_dependents": [],
@@ -5176,140 +5606,6 @@
     },
     {
       "crate_context": {
-        "pkg_name": "winapi-util",
-        "pkg_version": "0.1.5",
-        "edition": "2018",
-        "raze_settings": {
-          "additional_deps": [],
-          "skipped_deps": [],
-          "extra_aliased_targets": [],
-          "additional_flags": [],
-          "additional_env": {},
-          "gen_buildrs": null,
-          "data_attr": null,
-          "data_dependencies": [],
-          "compile_data_attr": null,
-          "build_data_dependencies": [],
-          "buildrs_additional_environment_variables": {},
-          "buildrs_additional_deps": [],
-          "patch_args": [],
-          "patch_cmds": [],
-          "patch_cmds_win": [],
-          "patch_tool": null,
-          "patches": [],
-          "additional_build_file": null
-        },
-        "canonical_additional_build_file": null,
-        "default_deps": {
-          "dependencies": [],
-          "proc_macro_dependencies": [],
-          "data_dependencies": [],
-          "build_dependencies": [],
-          "build_proc_macro_dependencies": [],
-          "build_data_dependencies": [],
-          "dev_dependencies": [],
-          "aliased_dependencies": []
-        },
-        "targeted_deps": [
-          {
-            "target": "cfg(windows)",
-            "deps": {
-              "dependencies": [
-                {
-                  "buildable_target": "@crypto_math_deps__winapi__0_3_9//:winapi",
-                  "name": "winapi",
-                  "version": "0.3.9",
-                  "is_proc_macro": false
-                }
-              ],
-              "proc_macro_dependencies": [],
-              "data_dependencies": [],
-              "build_dependencies": [],
-              "build_proc_macro_dependencies": [],
-              "build_data_dependencies": [],
-              "dev_dependencies": [],
-              "aliased_dependencies": []
-            },
-            "conditions": [
-              "@rules_rust//rust/platform:x86_64-pc-windows-msvc"
-            ]
-          }
-        ],
-        "license": {
-          "name": "Unlicense from expression \"Unlicense OR MIT\"",
-          "rating": "unencumbered"
-        },
-        "features": [],
-        "workspace_path_to_crate": "@crypto_math_deps__winapi_util__0_1_5//",
-        "workspace_member_dependents": [],
-        "workspace_member_dev_dependents": [],
-        "workspace_member_build_dependents": [],
-        "is_workspace_member_dependency": false,
-        "is_binary_dependency": false,
-        "targets": [
-          {
-            "kind": "lib",
-            "name": "winapi-util",
-            "path": "src/lib.rs",
-            "edition": "2018"
-          }
-        ],
-        "build_script_target": null,
-        "links": null,
-        "source_details": {
-          "git_data": null
-        },
-        "sha256": "70ec6ce85bb158151cae5e5c87f95a8e97d2c0c4b001223f33a334e3ce5de178",
-        "registry_url": "https://crates.io/api/v1/crates/winapi-util/0.1.5/download",
-        "expected_build_path": "remote/BUILD.winapi-util-0.1.5.bazel",
-        "lib_target_name": "winapi-util",
-        "is_proc_macro": false
-      },
-      "per_triple_metadata": {
-        "//conditions:default": {
-          "target": "Default",
-          "deps": {
-            "dependencies": [],
-            "proc_macro_dependencies": [],
-            "data_dependencies": [],
-            "build_dependencies": [],
-            "build_proc_macro_dependencies": [],
-            "build_data_dependencies": [],
-            "dev_dependencies": [],
-            "aliased_dependencies": []
-          },
-          "conditions": [
-            "//conditions:default"
-          ]
-        },
-        "@rules_rust//rust/platform:x86_64-pc-windows-msvc": {
-          "target": " cfg(windows)",
-          "deps": {
-            "dependencies": [
-              {
-                "buildable_target": "@crypto_math_deps__winapi__0_3_9//:winapi",
-                "name": "winapi",
-                "version": "0.3.9",
-                "is_proc_macro": false
-              }
-            ],
-            "proc_macro_dependencies": [],
-            "data_dependencies": [],
-            "build_dependencies": [],
-            "build_proc_macro_dependencies": [],
-            "build_data_dependencies": [],
-            "dev_dependencies": [],
-            "aliased_dependencies": []
-          },
-          "conditions": [
-            "@rules_rust//rust/platform:x86_64-pc-windows-msvc"
-          ]
-        }
-      },
-      "is_proc_macro": false
-    },
-    {
-      "crate_context": {
         "pkg_name": "winapi-x86_64-pc-windows-gnu",
         "pkg_version": "0.4.0",
         "edition": "2015",
@@ -5404,8 +5700,8 @@
   "member_packages_version_mapping": {
     "normal": {
       "anyhow": "1.0.43",
-      "env_logger": "0.8.4",
       "exitcode": "1.1.2",
+      "indicatif": "0.16.2",
       "log": "0.4.14",
       "structopt": "0.3.23"
     },
@@ -5415,8 +5711,8 @@
   "label_to_crates": {
     "//packages/rust:Cargo.toml": [
       "anyhow",
-      "env_logger",
       "exitcode",
+      "indicatif",
       "log",
       "structopt"
     ]
